@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Rectoría Participativa - Universidad del Atlántico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .active-nav {
+            color: #f59e0b;
+            font-weight: 700;
+        }
+        .active-tab {
+            background-color: #0d9488;
+            color: #ffffff;
+        }
+        .active-swot {
+            background-color: #0d9488;
+            color: #ffffff;
+            border-color: #0d9488;
+        }
+        .profile-image {
+            background: linear-gradient(135deg, #0d9488 0%, #f59e0b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            font-weight: bold;
+        }
+        .contribution-card {
+            transition: all 0.3s ease;
+        }
+        .contribution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .category-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .initiative-card {
+            border-left: 4px solid #0d9488;
+            transition: all 0.3s ease;
+        }
+        .initiative-card:hover {
+            transform: translateX(5px);
+        }
+        .management-item {
+            background: linear-gradient(to right, #f8fafc, #f0fdfa);
+            border-left: 4px solid #0d9488;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .reference-item {
+            border-left: 3px solid #f59e0b;
+            padding: 0.5rem 0 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <header id="inicio" class="bg-teal-800 text-white">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Plan de Rectoría Participativa</h1>
+            <p class="text-lg md:text-xl text-teal-100 max-w-3xl mx-auto">Construyamos juntos el futuro de la Universidad del Atlántico. Tu voz es esencial para una gobernanza incluyente.</p>
+        </div>
+    </header>
+
+    <nav class="sticky top-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center items-center h-16 space-x-4 md:space-x-8 overflow-x-auto">
+                <a href="#vision" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Visión</a>
+                <a href="#ejes" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Ejes Estratégicos</a>
+                <a href="#sostenibilidad" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Sostenibilidad</a>
+                <a href="#hidrogeno" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Hidrógeno Verde</a>
+                <a href="#participa" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">¡Participa!</a>
+                <a href="#referencias" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Referencias</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Sección de Visión -->
+        <section id="vision" class="py-16 md:py-24 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Visión de Rectoría 2025-2029</h2>
+                    <p class="text-lg md:text-xl text-amber-600 font-semibold max-w-3xl mx-auto">Consolidar a la UA como eje de la transición productiva del Caribe en energías limpias, bioeconomía, IA, industria y salud.</p>
+                    <p class="max-w-3xl mx-auto text-stone-600 mt-4">Bajo el liderazgo del Dr. Ing. Qco Angel Polo Córdoba</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/3 profile-image">
+                        <div class="text-center py-16">
+                            <span class="text-6xl">👨‍🔬</span>
+                            <p class="mt-4 text-xl font-bold">Dr. Angel Polo Córdoba</p>
+                            <p class="mt-2 text-teal-100">Candidato a Rector</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-teal-700 mb-4">Enfoque de Gestión</h3>
+                        <p class="text-stone-600 mb-6">Nuestro plan focaliza los recursos en cuatro ejes prioritarios de inversión, articulados con mecanismos de sostenibilidad financiera y alianzas estratégicas para transformar a la Universidad del Atlántico en el motor de desarrollo regional.</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                            <div class="bg-teal-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-teal-800">Inversión Focalizada</h4>
+                                <p class="text-3xl font-bold text-teal-600">85%</p>
+                                <p class="text-stone-600">de recursos en ejes prioritarios</p>
+                            </div>
+                            <div class="bg-amber-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-amber-800">Modelo Sostenible</h4>
+                                <p class="text-3xl font-bold text-amber-600">4</p>
+                                <p class="text-stone-600">mecanismos de gestión</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Ejes Estratégicos -->
+        <section id="ejes" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Ejes Estratégicos de Inversión</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Cuatro pilares prioritarios que transformarán a la Universidad del Atlántico en el motor de desarrollo regional.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Eje 1 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 initiative-card">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">⚡</span>
+                            <h3 class="text-xl font-bold text-teal-700">Energías Avanzadas (H2V, SAF, H2Azul)</h3>
+                        </div>
+                        <ul class="space-y-3 text-stone-600">
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">•</span>
+                                <span><strong>Planta Piloto Multiusos:</strong> Producción de SAF (aceites residuales) + H2Azul para industria cementera (alianza con Argos)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">•</span>
+                                <span><strong>Financiamiento:</strong> Regalías ODS 7 + venta de créditos de carbono</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">•</span>
+                                <span><strong>Programas de Reconversión Laboral:</strong> Certificados en Operación de Plantas de Biocombustibles para trabajadores del sector fósil</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Eje 2 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 initiative-card">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🌱</span>
+                            <h3 class="text-xl font-bold text-teal-700">Bioeconomía Circular Agrícola</h3>
+                        </div>
+                        <ul class="space-y-3 text-stone-600">
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">•</span>
+                                <span><strong>Corredor Tecnológico Agroindustrial:</strong> 3 biofábricas modulares en Magdalena/Atlántico (bioplásticos de residuos bananeros)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">•</span>
+                                <span><strong>Plataforma "AgroCircular Caribe":</strong> Trazabilidad blockchain para pequeños productores</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Eje 3 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 initiative-card">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🤖</span>
+                            <h3 class="text-xl font-bold text-teal-700">IA para Competitividad Sectorial</h3>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-stone-200">
+                                <thead class="bg-stone-50">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left text-xs font-medium text-stone-500 uppercase">Sector</th>
+                                        <th class="px-4 py-2 text-left text-xs font-medium text-stone-500 uppercase">Proyecto IA</th>
+                                        <th class="px-4 py-2 text-left text-xs font-medium text-stone-500 uppercase">Aliado Clave</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-200">
+                                    <tr>
+                                        <td class="px-4 py-3 font-medium text-stone-900">Portuario</td>
+                                        <td class="px-4 py-3 text-stone-600">Optimización logística en tiempo real</td>
+                                        <td class="px-4 py-3 text-stone-600">SPRB + IBM Colombia</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-medium text-stone-900">Turismo</td>
+                                        <td class="px-4 py-3 text-stone-600">Modelo predictivo de demanda estacional</td>
+                                        <td class="px-4 py-3 text-stone-600">Cotelco + ProColombia</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-medium text-stone-900">Agro</td>
+                                        <td class="px-4 py-3 text-stone-600">Drones + ML para detección temprana de plagas</td>
+                                        <td class="px-4 py-3 text-stone-600">Fedepalma</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Eje 4 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 initiative-card">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🏗️</span>
+                            <h3 class="text-xl font-bold text-teal-700">Infraestructura Crítica</h3>
+                        </div>
+                        <ul class="space-y-3 text-stone-600">
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">•</span>
+                                <span><strong>Modernización de Laboratorios:</strong> Biorrefinerías, simulación portuaria, drones agrícolas, economía circular</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">•</span>
+                                <span><strong>Conectividad 5G:</strong> Campus inteligente + zonas rurales piloto (Luruaco, Repelón)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Mecanismos de Sostenibilidad -->
+        <section id="sostenibilidad" class="py-16 md:py-24 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Mecanismos de Gestión y Sostenibilidad</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Estrategias integrales para garantizar la viabilidad a largo plazo de las iniciativas y la participación activa de la universidad en proyectos regionales e internacionales.</p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-teal-700 mb-6">Estrategias de Gestión Universitaria</h3>
+                        
+                        <div class="management-item">
+                            <h4 class="font-semibold text-lg text-teal-800 mb-2">Coordinación Estratégica para el Posicionamiento del Atlántico como Centro de Excelencia en Hidrógeno Verde</h4>
+                            <p class="text-stone-600">Articulación de capacidades institucionales para establecer al departamento como referente nacional en tecnologías de hidrógeno, mediante la implementación de la Plataforma Puerto de Hidrógeno.</p>
+                        </div>
+                        
+                        <div class="management-item">
+                            <h4 class="font-semibold text-lg text-teal-800 mb-2">Fortalecimiento de Alianzas Internacionales para el Desarrollo Tecnológico</h4>
+                            <p class="text-stone-600">Gestión de cooperación y vinculación con entidades globales especializadas en innovación y transferencia tecnológica para potenciar el ecosistema de investigación regional.</p>
+                        </div>
+                        
+                        <div class="management-item">
+                            <h4 class="font-semibold text-lg text-teal-800 mb-2">Implementación de Sistemas Tecnológicos de Alertas Tempranas para Sectores Estratégicos</h4>
+                            <p class="text-stone-600">Desarrollo de capacidades institucionales para el diseño e implementación de soluciones tecnológicas innovadoras de monitoreo y alerta temprana dirigidas a los sectores público y privado.</p>
+                        </div>
+                        
+                        <div class="management-item">
+                            <h4 class="font-semibold text-lg text-teal-800 mb-2">Innovación en Sistemas de Gestión de Seguridad y Salud en el Trabajo</h4>
+                            <p class="text-stone-600">Diseño e implementación de mecanismos tecnológicos avanzados para la prevención de riesgos laborales y promoción de entornos de trabajo seguros y saludables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Hidrógeno Verde -->
+        <section id="hidrogeno" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Hub de Hidrógeno Verde del Atlántico</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">El Atlántico como territorio ideal para el desarrollo de energías limpias y sostenibles</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-4">Participación Estratégica de la Universidad del Atlántico</h3>
+                    <p class="text-stone-600 mb-6">El Departamento del Atlántico ha sido confirmado como territorio ideal para la implementación del Hub de Hidrógeno Verde en Colombia, según estudios de prefactibilidad liderados por el Banco Mundial y la Universidad de los Andes.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-teal-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-teal-800 mb-3">Ventajas Competitivas del Atlántico</h4>
+                            <ul class="space-y-2 text-stone-600">
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Ubicación estratégica con acceso al mar y puertos de profundidad</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Condiciones climáticas ideales con radiación solar y vientos sostenidos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Disponibilidad de terrenos (18.000 m² en zona portuaria)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Capital humano especializado e institucionalidad consolidada</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-amber-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-amber-800 mb-3">Aporte Académico e Investigación</h4>
+                            <ul class="space-y-2 text-stone-600">
+                                <li class="flex items-start">
+                                    <span class="text-amber-500 mr-2">•</span>
+                                    <span>Formación de capital humano especializado en tecnologías de hidrógeno</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-amber-500 mr-2">•</span>
+                                    <span>Investigación aplicada y desarrollo tecnológico con plantas piloto</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-amber-500 mr-2">•</span>
+                                    <span>Asesoría técnica y científica para evaluaciones tecnoeconómicas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-amber-500 mr-2">•</span>
+                                    <span>Desarrollo de protocolos de seguridad industrial y gestión de riesgos</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-4">Gestión Integral de Seguridad y Salud con Enfoque en Salud Mental</h3>
+                    <p class="text-stone-600 mb-6">La transición hacia energías verdes requiere una gestión integral que incorpore no solo los aspectos técnicos sino también el bienestar psicosocial de los trabajadores y la comunidad universitaria.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-lg text-teal-800 mb-3">Componente de Gestión Emocional y Resiliencia</h4>
+                            <ul class="space-y-3 text-stone-600">
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Programas de prevención y promoción de salud mental</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Estrategias de resiliencia para adaptación a cambios tecnológicos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Talleres de conciencia plena (mindfulness) y manejo del estrés</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Capacitación en inteligencia emocional para mejorar el clima laboral</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg text-teal-800 mb-3">Prevención de Conductas de Riesgo</h4>
+                            <ul class="space-y-3 text-stone-600">
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Protocolos de detección temprana de señales de alerta en salud mental</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Capacitación de líderes en primeros auxilios psicológicos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Acceso a servicios de atención en salud mental y líneas de crisis</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Fortalecimiento de redes de apoyo entre pares y grupos de contención</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Participación -->
+        <section id="participa" class="py-16 md:py-24 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">¡Tu Participación es Importante!</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Forma parte activa de la construcción del plan de rectoría. Comparte tus ideas, preguntas y propuestas.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <div class="flex justify-center flex-wrap gap-2 mb-6">
+                        <button class="group-btn active-tab px-4 py-2 rounded-lg font-semibold transition" data-group="estudiantes">Estudiantes</button>
+                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="docentes">Docentes</button>
+                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="administrativos">Administrativos</button>
+                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="egresados">Egresados</button>
+                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="sector-publico">Sector Público</button>
+                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="gremios">Gremios</button>
+                    </div>
+
+                    <div id="form-container" class="mt-6">
+                        <form id="contribution-form" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-stone-700">Nombre completo</label>
+                                    <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-stone-700">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contribution-type" class="block text-sm font-medium text-stone-700">Tipo de aporte</label>
+                                <select id="contribution-type" name="contribution-type" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="pregunta">Pregunta</option>
+                                    <option value="propuesta">Propuesta</option>
+                                    <option value="observacion">Observación</option>
+                                    <option value="experiencia">Experiencia</option>
+                                    <option value="colaboracion">Oferta de Colaboración</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="theme" class="block text-sm font-medium text-stone-700">Ámbito de interés</label>
+                                <select id="theme" name="theme" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                                    <option value="">Selecciona un ámbito</option>
+                                    <option value="energias">Energías Avanzadas</option>
+                                    <option value="bioeconomia">Bioeconomía Circular</option>
+                                    <option value="ia">Inteligencia Artificial</option>
+                                    <option value="infraestructura">Infraestructura</option>
+                                    <option value="gestion">Gestión de Recursos</option>
+                                    <option value="internacional">Cooperación Internacional</option>
+                                    <option value="salud-mental">Salud Mental y Bienestar</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-stone-700">Tu mensaje</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" placeholder="Comparte tus ideas, preguntas o propuestas..."></textarea>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input id="anonymous" name="anonymous" type="checkbox" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-stone-300 rounded">
+                                <label for="anonymous" class="ml-2 block text-sm text-stone-700">Enviar de forma anónima</label>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                    Enviar aporte
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Referencias -->
+        <section id="referencias" class="py-16 md:py-24 bg-stone-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Referencias Bibliográficas</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Fuentes consultadas para la elaboración del plan de rectoría</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <div class="space-y-4">
+                        <div class="reference-item">
+                            <p class="text-stone-700">Banco Mundial & Gobernación del Atlántico. (2024). <span class="font-medium">Estudio de prefactibilidad para Hub de Hidrógeno Verde en Atlántico</span>.</p>
+                        </div>
+                        
+                        <div class="reference-item">
+                            <p class="text-stone-700">Alcayde, A. et al. (2023). <span class="font-medium">Evaluaciones tecnoeconómicas del hidrógeno verde a partir de perfiles de potencia fotovoltaica simulados y medidos</span>. Renewable and Sustainable Energy Reviews.</p>
+                        </div>
+                        
+                        <div class="reference-item">
+                            <p class="text-stone-700">BID & Anthesis Group. (2024). <span class="font-medium">Environmental, Health, Safety, and Social Management of Green Hydrogen in Latin America and the Caribbean</span>.</p>
+                        </div>
+                        
+                        <div class="reference-item">
+                            <p class="text-stone-700">Mayo Clinic. (2022). <span class="font-medium">Resiliencia: desarrolla habilidades para resistir frente a las dificultades</span>.</p>
+                        </div>
+                        
+                        <div class="reference-item">
+                            <p class="text-stone-700">National Institute on Drug Abuse (NIDA). (2023). <span class="font-medium">El cuidado de la salud mental y emocional</span>.</p>
+                        </div>
+                        
+                        <div class="reference-item">
+                            <p class="text-stone-700">Organización Mundial de la Salud. (2022). <span class="font-medium">Salud mental: fortalecer nuestra respuesta</span>.</p>
+                        </div>
+                        
+                        <div class="reference-item">
+                            <p class="text-stone-700">El Tiempo. (2024). <span class="font-medium">Confirman al Atlántico como territorio ideal para hub de hidrógeno verde: ¿qué sigue para el proyecto?</span> Recuperado de: https://www.eltiempo.com/colombia/barranquilla/confirman-a-atlantico-como-territorio-ideal-para-hub-de-hidrogeno-verde-que-sigue-para-el-proyecto-3366690</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-teal-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 Plan de Rectoría Participativa. Universidad del Atlántico - Construyendo juntos el futuro de nuestra institución.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad básica para los botones de grupo
+        document.querySelectorAll('.group-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.group-btn').forEach(btn => {
+                    btn.classList.remove('active-tab');
+                    btn.classList.add('bg-stone-200', 'text-stone-700');
+                });
+                button.classList.add('active-tab');
+                button.classList.remove('bg-stone-200', 'text-stone-700');
+            });
+        });
+
+        // Funcionalidad básica para el formulario
+        document.getElementById('contribution-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu aporte! Tu contribución será revisada y considerada en el plan de rectoría.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
