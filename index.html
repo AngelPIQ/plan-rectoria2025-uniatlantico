@@ -48,6 +48,23 @@
             color: white;
             font-size: 5rem;
             font-weight: bold;
+            position: relative;
+        }
+        .tarjeton-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            color: #0d9488;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .contribution-card {
             transition: all 0.3s ease;
@@ -82,6 +99,32 @@
             padding: 0.5rem 0 0.5rem 1rem;
             margin-bottom: 0.5rem;
         }
+        .question-card {
+            border-left: 4px solid #f59e0b;
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            transform: translateX(5px);
+        }
+        .pilar-tab {
+            transition: all 0.3s ease;
+        }
+        .pilar-tab:hover {
+            transform: translateY(-3px);
+        }
+        .big-tarjeton {
+            font-size: 8rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 768px) {
+            .big-tarjeton {
+                font-size: 5rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-800">
@@ -97,11 +140,15 @@
         <div class="container mx-auto px-6">
             <div class="flex justify-center items-center h-16 space-x-4 md:space-x-8 overflow-x-auto">
                 <a href="#vision" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Visión</a>
-                <a href="#ejes" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Ejes Estratégicos</a>
+                <a href="#diagnostico" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Diagnóstico</a>
+                <a href="#pilares" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Pilares</a>
+                <a href="#perfil" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Mi Perfil</a>
+                <a href="#mensaje" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Mensaje</a>
                 <a href="#sostenibilidad" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Sostenibilidad</a>
                 <a href="#hidrogeno" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Hidrógeno Verde</a>
-                <a href="#participa" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">¡Participa!</a>
-                <a href="#referencias" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Referencias</a>
+                <a href="#preguntas" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Preguntas</a>
+                <a href="#aportes" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Aportes</a>
+                <a href="#analisis" class="nav-link text-stone-600 hover:text-amber-500 transition duration-300 font-medium whitespace-nowrap px-2">Análisis</a>
             </div>
         </div>
     </nav>
@@ -118,15 +165,15 @@
 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row items-center">
                     <div class="w-full md:w-1/3 profile-image">
-                        <div class="text-center py-16">
-                            <span class="text-6xl">👨‍🔬</span>
+                        <div class="text-center py-12 md:py-16 relative flex flex-col items-center justify-center h-full">
+                            <div class="big-tarjeton">15</div>
                             <p class="mt-4 text-xl font-bold">Dr. Angel Polo Córdoba</p>
                             <p class="mt-2 text-teal-100">Candidato a Rector</p>
                         </div>
                     </div>
                     <div class="w-full md:w-2/3 p-8 md:p-12">
                         <h3 class="text-2xl font-bold text-teal-700 mb-4">Enfoque de Gestión</h3>
-                        <p class="text-stone-600 mb-6">Nuestro plan focaliza los recursos en cuatro ejes prioritarios de inversión, articulados con mecanismos de sostenibilidad y alianzas estratégicas para transformar a la Universidad del Atlántico en el motor de desarrollo regional.</p>
+                        <p class="text-stone-600 mb-6">Nuestro plan focaliza los recursos en cuatro ejes prioritarios de inversión, articulados con mecanismos de sostenibilidad financiera y alianzas estratégicas para transformar a la Universidad del Atlántico en el motor de desarrollo regional.</p>
                         
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                             <div class="bg-teal-50 p-4 rounded-lg">
@@ -145,105 +192,107 @@
             </div>
         </section>
 
-        <!-- Sección de Ejes Estratégicos -->
-        <section id="ejes" class="py-16 md:py-24">
+        <!-- Sección de Diagnóstico -->
+        <section id="diagnostico" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Ejes Estratégicos de Inversión</h2>
-                    <p class="max-w-3xl mx-auto text-stone-600">Cuatro pilares prioritarios que transformarán a la Universidad del Atlántico en el motor de desarrollo regional.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Diagnóstico Institucional</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Un análisis de nuestra posición actual, reconociendo nuestros logros para construir sobre bases sólidas y abordar nuestros desafíos con determinación.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Eje 1 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 initiative-card">
-                        <div class="flex items-center mb-4">
-                            <span class="text-3xl mr-3">⚡</span>
-                            <h3 class="text-xl font-bold text-teal-700">Energías Avanzadas (H2V, SAF, H2Azul)</h3>
-                        </div>
-                        <ul class="space-y-3 text-stone-600">
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">•</span>
-                                <span><strong>Planta Piloto Multiusos:</strong> Producción de SAF (aceites residuales) + H2Azul para industria cementera (alianza con Argos)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">•</span>
-                                <span><strong>Financiamiento:</strong> Regalías ODS 7 + venta de créditos de carbono</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">•</span>
-                                <span><strong>Programas de Reconversión Laboral:</strong> Certificados en Operación de Plantas de Biocombustibles para trabajadores del sector fósil</span>
-                            </li>
-                        </ul>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <p class="text-3xl font-bold text-amber-500">6 Años</p>
+                        <p class="text-stone-600 mt-2">Acreditación en Alta Calidad Renovada</p>
                     </div>
-
-                    <!-- Eje 2 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 initiative-card">
-                        <div class="flex items-center mb-4">
-                            <span class="text-3xl mr-3">🌱</span>
-                            <h3 class="text-xl font-bold text-teal-700">Bioeconomía Circular Agrícola</h3>
-                        </div>
-                        <ul class="space-y-3 text-stone-600">
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">•</span>
-                                <span><strong>Corredor Tecnológico Agroindustrial:</strong> 3 biofábricas modulares en Magdalena/Atlántico (bioplásticos de residuos bananeros)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">•</span>
-                                <span><strong>Plataforma "AgroCircular Caribe":</strong> Trazabilidad blockchain para pequeños productores</span>
-                            </li>
-                        </ul>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <p class="text-3xl font-bold text-amber-500">$115 Mil MM</p>
+                        <p class="text-stone-600 mt-2">Inversión Histórica en Infraestructura</p>
                     </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <p class="text-3xl font-bold text-amber-500">$395 Mil MM</p>
+                        <p class="text-stone-600 mt-2">Presupuesto Aprobado para 2025</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <p class="text-3xl font-bold text-amber-500">11,700+</p>
+                        <p class="text-stone-600 mt-2">Atenciones en Salud Mental en un año</p>
+                    </div>
+                </div>
 
-                    <!-- Eje 3 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 initiative-card">
-                        <div class="flex items-center mb-4">
-                            <span class="text-3xl mr-3">🤖</span>
-                            <h3 class="text-xl font-bold text-teal-700">IA para Competitividad Sectorial</h3>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full divide-y divide-stone-200">
-                                <thead class="bg-stone-50">
-                                    <tr>
-                                        <th class="px-4 py-2 text-left text-xs font-medium text-stone-500 uppercase">Sector</th>
-                                        <th class="px-4 py-2 text-left text-xs font-medium text-stone-500 uppercase">Proyecto IA</th>
-                                        <th class="px-4 py-2 text-left text-xs font-medium text-stone-500 uppercase">Aliado Clave</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-stone-200">
-                                    <tr>
-                                        <td class="px-4 py-3 font-medium text-stone-900">Portuario</td>
-                                        <td class="px-4 py-3 text-stone-600">Optimización logística en tiempo real</td>
-                                        <td class="px-4 py-3 text-stone-600">SPRB + IBM Colombia</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 font-medium text-stone-900">Turismo</td>
-                                        <td class="px-4 py-3 text-stone-600">Modelo predictivo de demanda estacional</td>
-                                        <td class="px-4 py-3 text-stone-600">Cotelco + ProColombia</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 font-medium text-stone-900">Agro</td>
-                                        <td class="px-4 py-3 text-stone-600">Drones + ML para detección temprana de plagas</td>
-                                        <td class="px-4 py-3 text-stone-600">Fedepalma</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex justify-center flex-wrap gap-2 mb-6">
+                        <button class="swot-btn active-swot border-2 border-stone-300 px-4 py-2 rounded-full font-semibold transition" data-filter="fortalezas">Fortalezas</button>
+                        <button class="swot-btn border-2 border-stone-300 px-4 py-2 rounded-full font-semibold transition" data-filter="oportunidades">Oportunidades</button>
+                        <button class="swot-btn border-2 border-stone-300 px-4 py-2 rounded-full font-semibold transition" data-filter="debilidades">Debilidades</button>
+                        <button class="swot-btn border-2 border-stone-300 px-4 py-2 rounded-full font-semibold transition" data-filter="amenazas">Amenazas</button>
+                    </div>
+                    <div id="swot-content" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Pilares Estratégicos -->
+        <section id="pilares" class="py-16 md:py-24 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Pilares Estratégicos</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Cinco ejes de acción interconectados para impulsar a la universidad hacia una nueva fase de liderazgo y competitividad.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div id="pills-container" class="flex md:flex-col flex-row overflow-x-auto -mx-4 px-4 md:w-1/4">
+                        <!-- Los tabs de pilares se generarán dinámicamente con JS -->
+                    </div>
+                    <div id="pills-content-container" class="md:w-3/4">
+                        <!-- El contenido de los pilares se generará dinámicamente con JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Perfil del Candidato -->
+        <section id="perfil" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Un Puente entre el Pasado y el Futuro</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Mi trayectoria es un reflejo del potencial de nuestra universidad. Un camino de compromiso, conocimiento y gratitud que fundamenta mi visión de liderazgo.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/3 profile-image">
+                        <div class="text-center py-12 md:py-16 relative flex flex-col items-center justify-center h-full">
+                            <div class="big-tarjeton">15</div>
+                            <p class="mt-4 text-xl font-bold">Candidato</p>
                         </div>
                     </div>
-
-                    <!-- Eje 4 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 initiative-card">
-                        <div class="flex items-center mb-4">
-                            <span class="text-3xl mr-3">🏗️</span>
-                            <h3 class="text-xl font-bold text-teal-700">Infraestructura Crítica</h3>
-                        </div>
-                        <ul class="space-y-3 text-stone-600">
+                    <div class="w-full md:w-2/3 p-8 md:p-12">
+                        <ul class="space-y-6">
                             <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">•</span>
-                                <span><strong>Modernización de Laboratorios:</strong> Biorrefinerías, simulación portuaria, drones agrícolas, economía circular</span>
+                                <div class="flex-shrink-0 bg-amber-500 text-white rounded-full h-10 w-10 flex items-center justify-center mr-4">
+                                    <span class="font-bold text-xl">1</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Egresado de Pregrado</h3>
+                                    <p class="text-stone-600">Una vivencia que me otorga un entendimiento profundo del entorno académico, sus desafíos y sus logros desde la perspectiva estudiantil.</p>
+                                </div>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">•</span>
-                                <span><strong>Conectividad 5G:</strong> Campus inteligente + zonas rurales piloto (Luruaco, Repelón)</span>
+                                <div class="flex-shrink-0 bg-amber-500 text-white rounded-full h-10 w-10 flex items-center justify-center mr-4">
+                                    <span class="font-bold text-xl">2</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Becario de Doctorado</h3>
+                                    <p class="text-stone-600">Una experiencia que vincula la formación de alta calidad con las políticas nacionales de investigación y ciencia del país.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 bg-amber-500 text-white rounded-full h-10 w-10 flex items-center justify-center mr-4">
+                                    <span class="font-bold text-xl">3</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Docente e Investigador (+10 años)</h3>
+                                    <p class="text-stone-600">Participación activa en la creación de nuevo conocimiento, conociendo la academia desde el aula y el laboratorio.</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -251,8 +300,42 @@
             </div>
         </section>
 
+        <!-- Sección de Mensaje a la Comunidad -->
+        <section id="mensaje" class="py-16 md:py-24 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Un Mensaje para Nuestra Comunidad</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Mi compromiso es con cada uno de ustedes. Juntos, construiremos la universidad que soñamos.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex justify-center flex-wrap gap-2 mb-6">
+                        <button class="community-btn active-tab px-4 py-2 rounded-lg font-semibold transition" data-target="estudiantes">Estudiantes</button>
+                        <button class="community-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-target="docentes">Docentes e Investigadores</button>
+                        <button class="community-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-target="administrativos">Personal Administrativo</button>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md min-h-[200px]">
+                        <div id="mensaje-estudiantes" class="community-content">
+                            <h3 class="font-bold text-xl mb-2 text-teal-700">Para los Estudiantes</h3>
+                            <p class="text-stone-600">"Soy egresado, entiendo sus desafíos. Mi plan es crear oportunidades para el futuro a través del emprendimiento, la tecnología y la investigación, además de garantizar su bienestar. Juntos, aseguraremos que su paso por la Uniatlántico sea una experiencia formativa de excelencia que les abra las puertas del mundo."</p>
+                            <button id="tts-estudiantes-btn" class="mt-4 px-4 py-2 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition">Escuchar Mensaje ✨</button>
+                        </div>
+                        <div id="mensaje-docentes" class="community-content hidden">
+                            <h3 class="font-bold text-xl mb-2 text-teal-700">Para Docentes e Investigadores</h3>
+                            <p class="text-stone-600">"Mi experiencia como docente e investigador me permite entender sus necesidades. Mi gestión fortalecerá la investigación de alto impacto, la transparencia en los procesos y la estabilidad laboral. Crearemos un ambiente donde el mérito y la producción académica sean los pilares del desarrollo profesional."</p>
+                            <button id="tts-docentes-btn" class="mt-4 px-4 py-2 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition">Escuchar Mensaje ✨</button>
+                        </div>
+                        <div id="mensaje-administrativos" class="community-content hidden">
+                            <h3 class="font-bold text-xl mb-2 text-teal-700">Para el Personal Administrativo</h3>
+                            <p class="text-stone-600">"El personal administrativo es un pilar fundamental de esta universidad. Respetaré y haré cumplir los estatutos, implementando modelos de gestión eficientes y transparentes que garanticen la promoción por mérito y el respeto a sus derechos laborales. Su labor es esencial para el funcionamiento de nuestra institución."</p>
+                            <button id="tts-administrativos-btn" class="mt-4 px-4 py-2 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition">Escuchar Mensaje ✨</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sección de Mecanismos de Sostenibilidad -->
-        <section id="sostenibilidad" class="py-16 md:py-24 bg-stone-100">
+        <section id="sostenibilidad" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Mecanismos de Gestión y Sostenibilidad</h2>
@@ -280,7 +363,7 @@
                         
                         <div class="management-item">
                             <h4 class="font-semibold text-lg text-teal-800 mb-2">Innovación en Sistemas de Gestión de Seguridad y Salud en el Trabajo</h4>
-                            <p class="text-stone-600">Diseño e implementación de mecanismos tecnológicos avanzados para la prevención de riesgos laborales y promoción de entornos de trabajo seguros y saludables.</p>
+                            <p class="text-stone-600">Diseño e implementación de mecanismos tecnológicos avanzados para la prevention de riesgos laborales y promoción de entornos de trabajo seguros y saludables.</p>
                         </div>
                     </div>
                 </div>
@@ -288,7 +371,7 @@
         </section>
 
         <!-- Sección de Hidrógeno Verde -->
-        <section id="hidrogeno" class="py-16 md:py-24">
+        <section id="hidrogeno" class="py-16 md:py-24 bg-stone-100">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Hub de Hidrógeno Verde del Atlántico</h2>
@@ -297,7 +380,7 @@
 
                 <div class="bg-white rounded-lg shadow-md p-8 mb-12">
                     <h3 class="text-2xl font-bold text-teal-700 mb-4">Participación Estratégica de la Universidad del Atlántico</h3>
-                    <p class="text-stone-600 mb-6">El Departamento del Atlántico ha sido confirmado como territorio ideal para la implementación del Hub de Hidrógeno Verde en Colombia, según estudios de prefactibilidad liderados por el Banco Mundial y la Universidad de los Andes.</p>
+                    <p class="text-stone-600 mb-6">El Departamento del Atlántico ha sido confirmado como territorio ideal para la implementación del Hub de Hidrógeno Verde en Colombia, según estudios de prefactibilidad liderados por el Banco Mundial and la Universidad de los Andes.</p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <div class="bg-teal-50 p-6 rounded-lg">
@@ -347,7 +430,7 @@
                 </div>
 
                 <div class="bg-white rounded-lg shadow-md p-8">
-                    <h3 class="text-2xl font-bold text-teal-700 mb-4">Gestión Integral de Seguridad y Salud con Enfoque en Salud Mental</h3>
+                    <h3 class="text-2xl font-bold text-teal-700 mb-4">Gestión Integral de Seguridad and Salud con Enfoque en Salud Mental</h3>
                     <p class="text-stone-600 mb-6">La transición hacia energías verdes requiere una gestión integral que incorpore no solo los aspectos técnicos sino también el bienestar psicosocial de los trabajadores y la comunidad universitaria.</p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -386,7 +469,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <span class="text-teal-500 mr-2">•</span>
-                                    <span>Acceso a servicios de atención en salud mental y líneas de crisis</span>
+                                    <span>Acceso to servicios de atención en salud mental y líneas de crisis</span>
                                 </li>
                                 <li class="flex items-start">
                                     <span class="text-teal-500 mr-2">•</span>
@@ -395,124 +478,228 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                    </div>
             </div>
         </section>
 
-        <!-- Sección de Participación -->
-        <section id="participa" class="py-16 md:py-24 bg-stone-100">
+        <!-- Sección de Preguntas al Candidato -->
+        <section id="preguntas" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">¡Tu Participación es Importante!</h2>
-                    <p class="max-w-3xl mx-auto text-stone-600">Forma parte activa de la construcción del plan de rectoría. Comparte tus ideas, preguntas y propuestas.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Preguntas para el Candidato</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Formula tus preguntas para enriquecer la discusión y contribuir al plan de rectoría. Todas las preguntas serán consideradas para ajustar y mejorar la propuesta.</p>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-md p-8">
-                    <div class="flex justify-center flex-wrap gap-2 mb-6">
-                        <button class="group-btn active-tab px-4 py-2 rounded-lg font-semibold transition" data-group="estudiantes">Estudiantes</button>
-                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="docentes">Docentes</button>
-                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="administrativos">Administrativos</button>
-                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="egresados">Egresados</button>
-                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="sector-publico">Sector Público</button>
-                        <button class="group-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-group="gremios">Gremios</button>
-                    </div>
-
-                    <div id="form-container" class="mt-6">
-                        <form id="contribution-form" class="space-y-4">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-stone-700">Nombre completo</label>
-                                    <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-stone-700">Correo electrónico</label>
-                                    <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
-                                </div>
-                            </div>
-
+                <div class="max-w-3xl mx-auto mb-12">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <form id="question-form" class="space-y-4">
                             <div>
-                                <label for="contribution-type" class="block text-sm font-medium text-stone-700">Tipo de aporte</label>
-                                <select id="contribution-type" name="contribution-type" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                                <label for="question-group" class="block text-sm font-medium text-stone-700">¿A qué grupo perteneces?</label>
+                                <select id="question-group" name="question-group" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
                                     <option value="">Selecciona una opción</option>
-                                    <option value="pregunta">Pregunta</option>
-                                    <option value="propuesta">Propuesta</option>
-                                    <option value="observacion">Observación</option>
-                                    <option value="experiencia">Experiencia</option>
-                                    <option value="colaboracion">Oferta de Colaboración</option>
+                                    <option value="estudiantes">Estudiante</option>
+                                    <option value="docentes">Docente</option>
+                                    <option value="administrativos">Personal Administrativo</option>
+                                    <option value="egresados">Egresado</option>
+                                    <option value="publico">Público General</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label for="theme" class="block text-sm font-medium text-stone-700">Ámbito de interés</label>
-                                <select id="theme" name="theme" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
-                                    <option value="">Selecciona un ámbito</option>
-                                    <option value="energias">Energías Avanzadas</option>
-                                    <option value="bioeconomia">Bioeconomía Circular</option>
-                                    <option value="ia">Inteligencia Artificial</option>
+                                <label for="question-theme" class="block text-sm font-medium text-stone-700">Tema de tu pregunta</label>
+                                <select id="question-theme" name="question-theme" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+                                    <option value="">Selecciona un tema</option>
+                                    <option value="academico">Académico</option>
+                                    <option value="investigacion">Investigación</option>
                                     <option value="infraestructura">Infraestructura</option>
-                                    <option value="gestion">Gestión de Recursos</option>
-                                    <option value="internacional">Cooperación Internacional</option>
-                                    <option value="salud-mental">Salud Mental y Bienestar</option>
+                                    <option value="bienestar">Bienestar Universitario</option>
+                                    <option value="gestion">Gestión Administrativa</option>
+                                    <option value="hidrogeno">Hidrógeno Verde</option>
+                                    <option value="transparencia">Transparencia</option>
+                                    <option value="otros">Otros</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label for="message" class="block text-sm font-medium text-stone-700">Tu mensaje</label>
-                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" placeholder="Comparte tus ideas, preguntas o propuestas..."></textarea>
-                            </div>
-
-                            <div class="flex items-center">
-                                <input id="anonymous" name="anonymous" type="checkbox" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-stone-300 rounded">
-                                <label for="anonymous" class="ml-2 block text-sm text-stone-700">Enviar de forma anónima</label>
+                                <label for="question-text" class="block text-sm font-medium text-stone-700">Tu pregunta</label>
+                                <textarea id="question-text" name="question-text" rows="4" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" placeholder="Escribe tu pregunta aquí..." required></textarea>
                             </div>
 
                             <div>
                                 <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
-                                    Enviar aporte
+                                    Enviar Pregunta
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-6 text-center">Preguntas de la Comunidad</h3>
+                    <div id="questions-container" class="space-y-6">
+                        <!-- Preguntas existentes -->
+                        <div class="question-card bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="category-badge bg-blue-100 text-blue-800">Académico</span>
+                                <span class="text-sm text-stone-500">09 Sep 2025</span>
+                            </div>
+                            <p class="text-stone-700 font-medium mb-2">¿Cómo piensa mejorar la disponibilidad de recursos bibliográficos para las carreras de ingeniería?</p>
+                            <p class="text-sm text-stone-600">Estudiante de Ingeniería</p>
+                        </div>
+
+                        <div class="question-card bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="category-badge bg-green-100 text-green-800">Investigación</span>
+                                <span class="text-sm text-stone-500">09 Sep 2025</span>
+                            </div>
+                            <p class="text-stone-700 font-medium mb-2">¿Qué estrategias implementará para fortalecer los grupos de investigación y aumentar las publicaciones indexadas?</p>
+                            <p class="text-sm text-stone-600">Docente Investigador</p>
+                        </div>
+
+                        <div class="question-card bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="category-badge bg-purple-100 text-purple-800">Hidrógeno Verde</span>
+                                <span class="text-sm text-stone-500">09 Sep 2025</span>
+                            </div>
+                            <p class="text-stone-700 font-medium mb-2">¿Cómo participará la universidad en el desarrollo del Hub de Hidrógeno Verde del Atlántico?</p>
+                            <p class="text-sm text-stone-600">Egresado</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Sección de Referencias -->
-        <section id="referencias" class="py-16 md:py-24 bg-stone-50">
+        <!-- Sección de Aportes de la Comunidad -->
+        <section id="aportes" class="py-16 md:py-24 bg-stone-100">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Referencias Bibliográficas</h2>
-                    <p class="max-w-3xl mx-auto text-stone-600">Fuentes consultadas para la elaboración del plan de rectoría</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Aportes de la Comunidad</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Ideas y propuestas de la comunidad universitaria para enriquecer el plan de rectoría.</p>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-md p-8">
-                    <div class="space-y-4">
-                        <div class="reference-item">
-                            <p class="text-stone-700">Banco Mundial & Gobernación del Atlántico. (2024). <span class="font-medium">Estudio de prefactibilidad para Hub de Hidrógeno Verde en Atlántico</span>.</p>
+                <div class="flex justify-center flex-wrap gap-2 mb-6">
+                    <button class="filter-btn active-tab px-4 py-2 rounded-lg font-semibold transition" data-filter="all">Todos</button>
+                    <button class="filter-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-filter="propuesta">Propuestas</button>
+                    <button class="filter-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-filter="observacion">Observaciones</button>
+                    <button class="filter-btn bg-stone-200 text-stone-700 px-4 py-2 rounded-lg font-semibold transition" data-filter="experiencia">Experiencias</button>
+                </div>
+
+                <div class="mb-6">
+                    <label for="group-filter" class="block text-sm font-medium text-stone-700 mb-2">Filtrar por grupo:</label>
+                    <select id="group-filter" class="block w-full md:w-1/3 rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        <option value="all">Todos los grupos</option>
+                        <option value="estudiantes">Estudiantes</option>
+                        <option value="docentes">Docentes</option>
+                        <option value="administrativos">Administrativos</option>
+                        <option value="egresados">Egresados</option>
+                    </select>
+                </div>
+
+                <div id="contributions-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Aportes de ejemplo con fechas actualizadas y anónimos -->
+                    <div class="contribution-card bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="category-badge bg-green-100 text-green-800">Propuesta</span>
+                            <span class="text-sm text-stone-500">09 Sep 2025</span>
                         </div>
-                        
-                        <div class="reference-item">
-                            <p class="text-stone-700">Alcayde, A. et al. (2023). <span class="font-medium">Evaluaciones tecnoeconómicas del hidrógeno verde a partir de perfiles de potencia fotovoltaica simulados y medidos</span>. Renewable and Sustainable Energy Reviews.</p>
+                        <p class="text-stone-700 font-medium mb-2">Crear un programa de mentorías entre egresados y estudiantes para orientación profesional</p>
+                        <p class="text-sm text-stone-600">Estudiante de último semestre</p>
+                    </div>
+
+                    <div class="contribution-card bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="category-badge bg-yellow-100 text-yellow-800">Observación</span>
+                            <span class="text-sm text-stone-500">09 Sep 2025</span>
                         </div>
-                        
-                        <div class="reference-item">
-                            <p class="text-stone-700">BID & Anthesis Group. (2024). <span class="font-medium">Environmental, Health, Safety, and Social Management of Green Hydrogen in Latin America and the Caribbean</span>.</p>
+                        <p class="text-stone-700 font-medium mb-2">Sería importante mejorar la señal de internet en todas las facultades, especialmente en aulas de postgrado</p>
+                        <p class="text-sm text-stone-600">Docente</p>
+                    </div>
+
+                    <div class="contribution-card bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="category-badge bg-purple-100 text-purple-800">Experiencia</span>
+                            <span class="text-sm text-stone-500">09 Sep 2025</span>
                         </div>
-                        
-                        <div class="reference-item">
-                            <p class="text-stone-700">Mayo Clinic. (2022). <span class="font-medium">Resiliencia: desarrolla habilidades para resistir frente a las dificultades</span>.</p>
+                        <p class="text-stone-700 font-medium mb-2">Como egresado, considero que necesitamos más convenios con empresas internacionales para prácticas profesionales</p>
+                        <p class="text-sm text-stone-600">Egresado</p>
+                    </div>
+
+                    <div class="contribution-card bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="category-badge bg-green-100 text-green-800">Propuesta</span>
+                            <span class="text-sm text-stone-500">09 Sep 2025</span>
                         </div>
-                        
-                        <div class="reference-item">
-                            <p class="text-stone-700">National Institute on Drug Abuse (NIDA). (2023). <span class="font-medium">El cuidado de la salud mental y emocional</span>.</p>
+                        <p class="text-stone-700 font-medium mb-2">Implementar un sistema de bicicletas compartidas dentro del campus para facilitar la movilidad</p>
+                        <p class="text-sm text-stone-600">Estudiante</p>
+                    </div>
+
+                    <div class="contribution-card bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="category-badge bg-yellow-100 text-yellow-800">Observación</span>
+                            <span class="text-sm text-stone-500">09 Sep 2025</span>
                         </div>
-                        
-                        <div class="reference-item">
-                            <p class="text-stone-700">Organización Mundial de la Salud. (2022). <span class="font-medium">Salud mental: fortalecer nuestra respuesta</span>.</p>
+                        <p class="text-stone-700 font-medium mb-2">Falta más divulgación sobre los servicios de bienestar universitario disponibles para los estudiantes</p>
+                        <p class="text-sm text-stone-600">Administrativo</p>
+                    </div>
+
+                    <div class="contribution-card bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="category-badge bg-green-100 text-green-800">Propuesta</span>
+                            <span class="text-sm text-stone-500">09 Sep 2025</span>
                         </div>
-                        
-                        <div class="reference-item">
-                            <p class="text-stone-700">El Tiempo. (2024). <span class="font-medium">Confirman al Atlántico como territorio ideal para hub de hidrógeno verde: ¿qué sigue para el proyecto?</span> Recuperado de: https://www.eltiempo.com/colombia/barranquilla/confirman-a-atlantico-como-territorio-ideal-para-hub-de-hidrogeno-verde-que-sigue-para-el-proyecto-3366690</p>
+                        <p class="text-stone-700 font-medium mb-2">Crear un centro de emprendimiento con apoyo real para desarrollar ideas de negocio de estudiantes</p>
+                        <p class="text-sm text-stone-600">Estudiante de Administración</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button id="load-more" class="px-6 py-2 bg-teal-600 text-white font-medium rounded-md hover:bg-teal-700 transition">Cargar más aportes</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Análisis de Participación -->
+        <section id="analisis" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Análisis de Participación</h2>
+                    <p class="max-w-3xl mx-auto text-stone-600">Visualización de los aportes recibidos por tipo de contribución y grupo participante.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-teal-700 mb-4">Distribución por Tipo de Aporte</h3>
+                        <div class="chart-container">
+                            <canvas id="contributions-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-teal-700 mb-4">Participación por Grupo</h3>
+                        <div class="chart-container">
+                            <canvas id="groups-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-teal-700 mb-4">Tendencias y Temáticas Principales</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="topics-container">
+                        <!-- Los temas principales se cargarán aquí -->
+                        <div class="bg-teal-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-teal-800">Infraestructura</h4>
+                            <p class="text-2xl font-bold text-teal-600">42%</p>
+                            <p class="text-stone-600">de los aportes</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-amber-800">Bienestar Estudiantil</h4>
+                            <p class="text-2xl font-bold text-amber-600">28%</p>
+                            <p class="text-stone-600">de los aportes</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800">Investigación</h4>
+                            <p class="text-2xl font-bold text-blue-600">18%</p>
+                            <p class="text-stone-600">de los aportes</p>
                         </div>
                     </div>
                 </div>
@@ -527,23 +714,535 @@
     </footer>
 
     <script>
-        // Funcionalidad básica para los botones de grupo
-        document.querySelectorAll('.group-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelectorAll('.group-btn').forEach(btn => {
-                    btn.classList.remove('active-tab');
-                    btn.classList.add('bg-stone-200', 'text-stone-700');
-                });
-                button.classList.add('active-tab');
-                button.classList.remove('bg-stone-200', 'text-stone-700');
-            });
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Datos de ejemplo para simular contribuciones
+            const sampleContributions = [
+                {
+                    id: 1,
+                    group: 'estudiantes',
+                    type: 'propuesta',
+                    theme: 'infraestructura',
+                    name: 'Estudiante de último semestre',
+                    message: 'Crear un programa de mentorías entre egresados y estudiantes para orientación profesional',
+                    date: '2025-09-09',
+                    anonymous: true
+                },
+                {
+                    id: 2,
+                    group: 'docentes',
+                    type: 'observacion',
+                    theme: 'infraestructura',
+                    name: 'Docente',
+                    message: 'Sería importante mejorar la señal de internet en todas las facultades, especialmente en aulas de postgrado',
+                    date: '2025-09-09',
+                    anonymous: true
+                },
+                {
+                    id: 3,
+                    group: 'egresados',
+                    type: 'experiencia',
+                    theme: 'internacionalizacion',
+                    name: 'Egresado',
+                    message: 'Como egresado, considero que necesitamos más convenios con empresas internacionales para prácticas profesionales',
+                    date: '2025-09-09',
+                    anonymous: true
+                },
+                {
+                    id: 4,
+                    group: 'estudiantes',
+                    type: 'propuesta',
+                    theme: 'movilidad',
+                    name: 'Estudiante',
+                    message: 'Implementar un sistema de bicicletas compartidas dentro del campus para facilitar la movilidad',
+                    date: '2025-09-09',
+                    anonymous: true
+                },
+                {
+                    id: 5,
+                    group: 'administrativos',
+                    type: 'observacion',
+                    theme: 'bienestar',
+                    name: 'Administrativo',
+                    message: 'Falta más divulgación sobre los servicios de bienestar universitario disponibles para los estudiantes',
+                    date: '2025-09-09',
+                    anonymous: true
+                },
+                {
+                    id: 6,
+                    group: 'estudiantes',
+                    type: 'propuesta',
+                    theme: 'emprendimiento',
+                    name: 'Estudiante de Administración',
+                    message: 'Crear un centro de emprendimiento con apoyo real para desarrollar ideas de negocio de estudiantes',
+                    date: '2025-09-09',
+                    anonymous: true
+                }
+            ];
 
-        // Funcionalidad básica para el formulario
-        document.getElementById('contribution-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('¡Gracias por tu aporte! Tu contribución será revisada y considerada en el plan de rectoría.');
-            this.reset();
+            // Almacenar contribuciones en localStorage si no existen
+            if (!localStorage.getItem('contributions')) {
+                localStorage.setItem('contributions', JSON.stringify(sampleContributions));
+            }
+
+            // Implementación de la sección de diagnóstico (SWOT)
+            const swotData = {
+                fortalezas: [
+                    "Renovación de Acreditación en Alta Calidad por 6 años.",
+                    "Inversión de $115 mil millones en infraestructura.",
+                    "Avances en consolidación institucional.",
+                    "Apertura del histórico programa de Medicina."
+                ],
+                oportunidades: [
+                    "Alineación con Plan de Desarrollo del Atlántico ($7.3 billones).",
+                    "Demanda de talento en la región Caribe para diversificación productiva.",
+                    "Hoja de ruta nacional para la integración de la IA en educación superior."
+                ],
+                debilidades: [
+                    "Problemas históricos de gobernabilidad y polarización.",
+                    "Falta de un enfoque proactivo en salud mental y bienestar.",
+                    "Clima laboral tenso y conflictos sindicales.",
+                    "Historial de bajas calificaciones en pruebas Saber Pro."
+                ],
+                amenazas: [
+                    "Alta informalidad laboral y baja productividad en la región.",
+                    "Conflictos internos y protestas que interrumpen la actividad académica.",
+                    "Riesgos ambientales y vulnerabilidad climática en el Caribe."
+                ]
+            };
+
+            const swotContent = document.getElementById('swot-content');
+            const swotBtns = document.querySelectorAll('.swot-btn');
+
+            function renderSwot(filter) {
+                swotContent.innerHTML = '';
+                swotData[filter].forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'bg-stone-50 p-4 rounded-md border-l-4 border-amber-500';
+                    div.innerHTML = `<p class="text-stone-700">${item}</p>`;
+                    swotContent.appendChild(div);
+                });
+            }
+
+            swotBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    swotBtns.forEach(b => b.classList.remove('active-swot'));
+                    btn.classList.add('active-swot');
+                    renderSwot(btn.dataset.filter);
+                });
+            });
+
+            renderSwot('fortalezas');
+
+            // Implementación de la sección de pilares estratégicos
+            const pilaresData = [
+                { 
+                    id: 'excelencia', 
+                    icon: '🎓', 
+                    title: 'Excelencia Formativa', 
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Excelencia en Pregrado y Posgrado</h3>
+                        <p class="text-stone-600 mb-6">Para formar a los líderes que la región necesita, modernizaremos la oferta académica con una actualización curricular constante, el fortalecimiento de habilidades transversales y la implementación de modelos de educación multimodales. Abordaremos directamente las debilidades históricas con programas de nivelación y tutorías para asegurar que cada estudiante alcance su máximo potencial.</p>
+                        <div class="bg-stone-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-center mb-4">Meta: Mejora en Competencias Académicas</h4>
+                            <div class="chart-container"><canvas id="saberProChart"></canvas></div>
+                        </div>`
+                },
+                { 
+                    id: 'investigacion', 
+                    icon: '🔬', 
+                    title: 'I+D+i para el Caribe', 
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Investigación, Desarrollo e Innovación</h3>
+                        <p class="text-stone-600 mb-6">Transformaremos nuestros 60 grupos de investigación en un motor de desarrollo regional. Crearemos un "Hub de Innovación y Tecnología" para vincular a investigadores con el sector productivo, incentivando la publicación de alto impacto y fomentando la colaboración con redes de conocimiento nacionales e internacionales. Seremos protagonistas en la diversificación productiva del Caribe.</p>
+                        <div class="bg-stone-50 p-6 rounded-lg text-center">
+                            <h4 class="font-semibold mb-4">Modelo del Hub de Innovación</h4>
+                            <div class="flex flex-col items-center justify-center space-y-4">
+                                <div class="bg-teal-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg">Universidad (Hub)</div>
+                                <div class="w-px h-8 bg-stone-400"></div>
+                                <div class="flex flex-col md:flex-row gap-4">
+                                    <div class="bg-amber-500 text-white py-2 px-4 rounded-md">Investigadores</div>
+                                    <div class="bg-amber-500 text-white py-2 px-4 rounded-md">Sector Productivo</div>
+                                    <div class="bg-amber-500 text-white py-2 px-4 rounded-md">Estudiantes</div>
+                                </div>
+                            </div>
+                        </div>` 
+                },
+                { 
+                    id: 'emprendimiento', 
+                    icon: '💡', 
+                    title: 'Emprendimiento de Impacto', 
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Emprendimiento Universitario</h3>
+                        <p class="text-stone-600 mb-6">Transformaremos la formación en emprendimiento en una realidad tangible. Adaptaremos modelos de éxito para acompañar a nuestros emprendedores con mentorías, bootcamps y espacios innovadores como 'Maker Spaces'. El objetivo es claro: combatir la informalidad laboral de la región, dando a nuestros egresados herramientas para el autoempleo y la creación de nuevas oportunidades.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                            <div class="bg-stone-50 p-6 rounded-lg">
+                                <p class="text-3xl font-bold text-teal-600">1,960+</p>
+                                <p class="text-stone-600 mt-2">Meta de Emprendedores Acompañados</p>
+                            </div>
+                            <div class="bg-stone-50 p-6 rounded-lg">
+                                <p class="text-3xl font-bold text-teal-600">Nuevos</p>
+                                <p class="text-stone-600 mt-2">Maker & Team Spaces</p>
+                            </div>
+                        </div>`
+                },
+                { 
+                    id: 'digital', 
+                    icon: '💻', 
+                    title: 'Transformación Digital', 
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">La IA y las TICs como Motores de Cambio</h3>
+                        <p class="text-stone-600 mb-6">La transformación digital es un imperativo. Implementaremos programas de capacitación obligatorios en el uso ético y efectivo de la IA para docentes y estudiantes. Adoptaremos plataformas de gestión inteligentes para optimizar procesos administrativos, mejorar la toma de decisiones y, crucialmente, identificar y apoyar a estudiantes en riesgo de deserción.</p>
+                        <div class="bg-stone-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-center mb-4">Focos de la Estrategia Digital</h4>
+                            <div class="chart-container"><canvas id="digitalChart"></canvas></div>
+                        </div>`
+                },
+                { 
+                    id: 'gobernabilidad', 
+                    icon: '🤝', 
+                    title: 'Gobernabilidad y Bienestar', 
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Gobernabilidad y Bienestar Comunitario</h3>
+                        <p class="text-stone-600 mb-6">Un liderazgo transparente y de puertas abiertas es la única vía para restaurar la confianza. Priorizaremos el diálogo constante con todos los estamentos y fortaleceremos la rendición de cuidados. Transformaremos el modelo de bienestar hacia una política integral y proactiva de salud mental, construyendo un entorno seguro y de apoyo donde cada miembro de la comunidad se sienta valorado y respetado.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                            <div class="bg-stone-50 p-6 rounded-lg">
+                                <p class="text-4xl">🗣️</p><p class="font-semibold mt-2">Diálogo Abierto</p>
+                            </div>
+                            <div class="bg-stone-50 p-6 rounded-lg">
+                                <p class="text-4xl">📊</p><p class="font-semibold mt-2">Transparencia</p>
+                            </div>
+                            <div class="bg-stone-50 p-6 rounded-lg">
+                                <p class="text-4xl">❤️</p><p class="font-semibold mt-2">Salud Mental Proactiva</p>
+                            </div>
+                        </div>`
+                }
+            ];
+            
+            const pillsContainer = document.getElementById('pills-container');
+            const pillsContentContainer = document.getElementById('pills-content-container');
+
+            pilaresData.forEach((pilar, index) => {
+                const button = document.createElement('button');
+                button.className = `pilar-tab flex items-center text-left w-full p-4 rounded-lg font-semibold transition whitespace-nowrap mb-2 ${index === 0 ? 'active-tab' : 'bg-stone-200 text-stone-700'}`;
+                button.dataset.target = pilar.id;
+                button.innerHTML = `<span class="text-2xl mr-3">${pilar.icon}</span> <span>${pilar.title}</span>`;
+                pillsContainer.appendChild(button);
+
+                const contentDiv = document.createElement('div');
+                contentDiv.id = pilar.id;
+                contentDiv.className = `pills-content ${index !== 0 ? 'hidden' : ''}`;
+                contentDiv.innerHTML = pilar.content;
+                pillsContentContainer.appendChild(contentDiv);
+            });
+
+            const pillsTabs = document.querySelectorAll('.pilar-tab');
+            const pillsContents = document.querySelectorAll('.pills-content');
+
+            pillsTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    pillsTabs.forEach(t => {
+                        t.classList.remove('active-tab');
+                        t.classList.add('bg-stone-200', 'text-stone-700');
+                    });
+                    tab.classList.add('active-tab');
+                    tab.classList.remove('bg-stone-200', 'text-stone-700');
+
+                    pillsContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    document.getElementById(tab.dataset.target).classList.remove('hidden');
+                    
+                    if (tab.dataset.target === 'excelencia') initSaberProChart();
+                    if (tab.dataset.target === 'digital') initDigitalChart();
+                });
+            });
+
+            function initSaberProChart() {
+                const ctx = document.getElementById('saberProChart');
+                if (ctx) {
+                    if (Chart.getChart(ctx)) {
+                        Chart.getChart(ctx).destroy();
+                    }
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Pensamiento Crítico', 'Comunicación', 'Resolución Problemas'],
+                            datasets: [{
+                                label: 'Puntaje Actual (Promedio)',
+                                data: [145, 150, 148],
+                                backgroundColor: 'rgba(209, 213, 219, 1)',
+                                borderColor: 'rgba(156, 163, 175, 1)',
+                                borderWidth: 1
+                            }, {
+                                label: 'Meta de Rectoría',
+                                data: [165, 170, 168],
+                                backgroundColor: 'rgba(13, 148, 136, 0.7)',
+                                borderColor: 'rgba(13, 148, 136, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: { y: { beginAtZero: true, suggestedMax: 200 } },
+                            plugins: { legend: { position: 'top' } }
+                        }
+                    });
+                }
+            }
+
+            function initDigitalChart() {
+                const ctx = document.getElementById('digitalChart');
+                if (ctx) {
+                    if (Chart.getChart(ctx)) {
+                        Chart.getChart(ctx).destroy();
+                    }
+                    new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Capacitación Docente/Estudiantil', 'Gestión con IA', 'Investigación Asistida'],
+                            datasets: [{
+                                data: [45, 35, 20],
+                                backgroundColor: ['#0d9488', '#f59e0b', '#6b7280'],
+                                hoverOffset: 4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { position: 'bottom' } }
+                        }
+                    });
+                }
+            }
+            
+            // Inicializar gráficos para la primera pestaña
+            setTimeout(() => {
+                initSaberProChart();
+            }, 100);
+
+            // Funcionalidad para el formulario de preguntas
+            const questionForm = document.getElementById('question-form');
+            const questionsContainer = document.getElementById('questions-container');
+
+            questionForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const groupSelect = document.getElementById('question-group');
+                const groupText = groupSelect.options[groupSelect.selectedIndex].text;
+                
+                const themeSelect = document.getElementById('question-theme');
+                const themeText = themeSelect.options[themeSelect.selectedIndex].text;
+                
+                const newQuestion = {
+                    group: groupSelect.value,
+                    groupText: groupText,
+                    theme: themeSelect.value,
+                    themeText: themeText,
+                    question: formData.get('question-text'),
+                    date: new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })
+                };
+
+                // Crear elemento para la nueva pregunta
+                const questionElement = document.createElement('div');
+                questionElement.className = 'question-card bg-white p-6 rounded-lg shadow-md';
+                questionElement.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="category-badge ${getThemeColorClass(newQuestion.theme)}">${newQuestion.themeText}</span>
+                        <span class="text-sm text-stone-500">${newQuestion.date}</span>
+                    </div>
+                    <p class="text-stone-700 font-medium mb-2">${newQuestion.question}</p>
+                    <p class="text-sm text-stone-600">${newQuestion.groupText}</p>
+                `;
+                
+                // Añadir la nueva pregunta al inicio del contenedor
+                questionsContainer.insertBefore(questionElement, questionsContainer.firstChild);
+                
+                // Resetear formulario
+                this.reset();
+                
+                // Mostrar mensaje de éxito
+                alert('¡Gracias por tu pregunta! Será considerada para enriquecer el plan de rectoría.');
+            });
+
+            function getThemeColorClass(theme) {
+                const colorMap = {
+                    'academico': 'bg-blue-100 text-blue-800',
+                    'investigacion': 'bg-green-100 text-green-800',
+                    'infraestructura': 'bg-yellow-100 text-yellow-800',
+                    'bienestar': 'bg-purple-100 text-purple-800',
+                    'gestion': 'bg-red-100 text-red-800',
+                    'hidrogeno': 'bg-teal-100 text-teal-800',
+                    'transparencia': 'bg-indigo-100 text-indigo-800',
+                    'otros': 'bg-gray-100 text-gray-800'
+                };
+                return colorMap[theme] || 'bg-gray-100 text-gray-800';
+            }
+
+            // Funcionalidad para los gráficos
+            function updateCharts() {
+                // Obtener contribuciones
+                let contributions = JSON.parse(localStorage.getItem('contributions'));
+                
+                // Datos para el gráfico de tipos de contribución
+                const typeCounts = {
+                    propuesta: 0,
+                    observacion: 0,
+                    experiencia: 0,
+                    critica: 0
+                };
+
+                contributions.forEach(contribution => {
+                    typeCounts[contribution.type]++;
+                });
+
+                const contributionsCtx = document.getElementById('contributions-chart');
+                if (Chart.getChart(contributionsCtx)) {
+                    Chart.getChart(contributionsCtx).destroy();
+                }
+                new Chart(contributionsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Propuestas', 'Observaciones', 'Experiencias', 'Críticas Constructivas'],
+                        datasets: [{
+                            data: Object.values(typeCounts),
+                            backgroundColor: ['#10b981', '#f59e0b', '#8b5cf6', '#ef4444'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+
+                // Datos para el gráfico de grupos
+                const groupCounts = {
+                    estudiantes: 0,
+                    docentes: 0,
+                    administrativos: 0,
+                    egresados: 0
+                };
+
+                contributions.forEach(contribution => {
+                    groupCounts[contribution.group]++;
+                });
+
+                const groupsCtx = document.getElementById('groups-chart');
+                if (Chart.getChart(groupsCtx)) {
+                    Chart.getChart(groupsCtx).destroy();
+                }
+                new Chart(groupsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Estudiantes', 'Docentes', 'Administrativos', 'Egresados'],
+                        datasets: [{
+                            label: 'Número de Aportes',
+                            data: Object.values(groupCounts),
+                            backgroundColor: '#0d9488',
+                            borderColor: '#0d9488',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Funcionalidad para Text-to-Speech
+            const ttsEstudiantesBtn = document.getElementById('tts-estudiantes-btn');
+            const ttsDocentesBtn = document.getElementById('tts-docentes-btn');
+            const ttsAdministrativosBtn = document.getElementById('tts-administrativos-btn');
+
+            function playTTS(text) {
+                // Use browser's built-in TTS as fallback
+                if ('speechSynthesis' in window) {
+                    const speech = new SpeechSynthesisUtterance(text);
+                    speech.lang = 'es-ES';
+                    speech.rate = 1.0;
+                    speech.pitch = 1.0;
+                    window.speechSynthesis.speak(speech);
+                } else {
+                    alert('Tu navegador no soporta la funcionalidad de texto a voz. Prueba con Chrome, Edge o Safari.');
+                }
+            }
+
+            ttsEstudiantesBtn.addEventListener('click', () => {
+                const text = document.querySelector('#mensaje-estudiantes p').textContent;
+                playTTS(text);
+            });
+            ttsDocentesBtn.addEventListener('click', () => {
+                const text = document.querySelector('#mensaje-docentes p').textContent;
+                playTTS(text);
+            });
+            ttsAdministrativosBtn.addEventListener('click', () => {
+                const text = document.querySelector('#mensaje-administrativos p').textContent;
+                playTTS(text);
+            });
+
+            // Funcionalidad para mensajes a la comunidad
+            const communityBtns = document.querySelectorAll('.community-btn');
+            const communityContents = document.querySelectorAll('.community-content');
+
+            communityBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    communityBtns.forEach(b => {
+                        b.classList.remove('active-tab');
+                        b.classList.add('bg-stone-200', 'text-stone-700');
+                    });
+                    btn.classList.add('active-tab');
+                    btn.classList.remove('bg-stone-200', 'text-stone-700');
+
+                    communityContents.forEach(content => content.classList.add('hidden'));
+                    document.getElementById(`mensaje-${btn.dataset.target}`).classList.remove('hidden');
+                });
+            });
+
+            // Inicializar la visualización
+            updateCharts();
+
+            // Navegación y scroll
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
