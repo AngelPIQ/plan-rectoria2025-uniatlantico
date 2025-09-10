@@ -124,6 +124,13 @@
             .big-tarjeton {
                 font-size: 5rem;
             }
+            #pills-container {
+                flex-direction: row;
+                overflow-x: auto;
+            }
+            .pilar-tab {
+                min-width: 200px;
+            }
         }
     </style>
 </head>
@@ -237,7 +244,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-4">Pilares Estratégicos</h2>
-                    <p class="max-w-3xl mx-auto text-stone-600">Cinco ejes de acción interconectados para impulsar a la universidad hacia una nueva fase de liderazgo y competitividad.</p>
+                    <p class="max-w-3xl mx-auto text-stone-600">Siete ejes de acción interconectados para impulsar a la universidad hacia una nueva fase de liderazgo y competitividad.</p>
                 </div>
 
                 <div class="flex flex-col md:flex-row gap-8">
@@ -316,7 +323,7 @@
                     <div class="bg-white p-8 rounded-lg shadow-md min-h-[200px]">
                         <div id="mensaje-estudiantes" class="community-content">
                             <h3 class="font-bold text-xl mb-2 text-teal-700">Para los Estudiantes</h3>
-                            <p class="text-stone-600">"Soy egresado, entiendo sus desafíos. Mi plan es crear oportunidades para el futuro a través del emprendimiento, la tecnología y la investigación, además de garantizar su bienestar. Juntos, aseguraremos que su paso por la Uniatlántico sea una experiencia formativa de excelencia que les abra las puertas del mundo."</p>
+                            <p class="text-stone-600">"Soy egresado, entiendo sus desafíos. Mi plan es crear oportunidades para el futuro a través del emprendimiento, la tecnología y la investigación, además de garantizar su bienestar. Juntos, aseguraremos que su paso por la Uniatlántico sea una experiencia formative de excelencia que les abra las puertas del mundo."</p>
                             <button id="tts-estudiantes-btn" class="mt-4 px-4 py-2 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition">Escuchar Mensaje ✨</button>
                         </div>
                         <div id="mensaje-docentes" class="community-content hidden">
@@ -914,6 +921,58 @@
                             <div class="bg-stone-50 p-6 rounded-lg">
                                 <p class="text-4xl">❤️</p><p class="font-semibold mt-2">Salud Mental Proactiva</p>
                             </div>
+                        </div>`
+                },
+                // NUEVOS PILARES AÑADIDOS
+                { 
+                    id: 'internacionalizacion', 
+                    icon: '🌍', 
+                    title: 'Internacionalización', 
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Internacionalización de la Universidad</h3>
+                        <p class="text-stone-600 mb-6">Fortaleceremos la presencia global de la Universidad del Atlántico mediante la creación de programas de doble titulación, el incremento de convenios internacionales y la promoción de movilidad académica bidireccional. Estableceremos centros de idiomas para mejorar las competencias lingüísticas de nuestra comunidad universitaria y posicionaremos a la UA como un referente en la formación de profesionales con visión global.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                            <div class="bg-stone-50 p-6 rounded-lg">
+                                <p class="text-3xl font-bold text-teal-600">25+</p>
+                                <p class="text-stone-600 mt-2">Nuevos convenios internacionales</p>
+                            </div>
+                            <div class="bg-stone-50 p-6 rounded-lg">
+                                <p class="text-3xl font-bold text-teal-600">300+</p>
+                                <p class="text-stone-600 mt-2">Movilidades estudiantiles anuales</p>
+                            </div>
+                            <div class="bg-stone-50 p-6 rounded-lg">
+                                <p class="text-3xl font-bold text-teal-600">5</p>
+                                <p class="text-stone-600 mt-2">Programas de doble titulación</p>
+                            </div>
+                        </div>`
+                },
+                { 
+                    id: 'sostenibilidad-ambiental', 
+                    icon: '♻️', 
+                    title: 'Sostenibilidad Ambiental', 
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">Compromiso con la Sostenibilidad Ambiental</h3>
+                        <p class="text-stone-600 mb-6">Implementaremos una política integral de sostenibilidad ambiental que convierta a la Universidad del Atlántico en un campus verde modelo. Desarrollaremos programas de investigación en energías renovables, gestión de residuos y conservación de recursos, integrando la sostenibilidad en todos los currículos académicos y operaciones universitarias. Seremos referentes en la implementación de prácticas ambientalmente responsables.</p>
+                        <div class="bg-stone-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-center mb-4">Metas de Sostenibilidad 2025-2029</h4>
+                            <ul class="space-y-3 text-stone-600">
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Reducción del 30% en la huella de carbono institucional</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Implementación de sistema de gestión de residuos sólidos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Certificación de campus sostenible</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-500 mr-2">•</span>
+                                    <span>Incorporación de energías renovables en el 40% del consumo energético</span>
+                                </li>
+                            </ul>
                         </div>`
                 }
             ];
